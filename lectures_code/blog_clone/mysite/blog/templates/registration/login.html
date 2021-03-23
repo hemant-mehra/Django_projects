@@ -1,0 +1,22 @@
+{%extends 'blog/base.html'%}
+
+{% block content %}
+<div class="jumbotron">
+  <h2>please login</h2>
+  <h3>(Must be superuser,please check with the site admin)</h3>
+  {% if form.errors %}
+  <p>Your username and password didn't match</p>
+  {%endif%}
+
+  <form  action="{%url 'login'%}" method="POST">
+    <!-- we didnt use{'blog:login'} like we use to do because the template folder is in app mot at site level -->
+    {%csrf_token%}
+    {{form.as_p}}
+    <!-- used inbuild form from views of auth(called from site level urls,py) -->
+    <input type="submit" class='btn btn-primary' value="Login">
+    <input type="hidden" name="next" value="{{next}}"> <!--same view will suplly eh value of next,whre to go next when loggen in-->
+  </form>
+
+</div>
+
+{%endblock%}

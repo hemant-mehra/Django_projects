@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Star Social</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+     <!-- Optional theme -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+     <!-- Latest compiled and minified JavaScript -->
+     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+   <link rel="stylesheet" href="{% static 'simplesocial/css/master.css'%}">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default  navbar-static-top custom-navbar">
+
+     			<div class="container">
+
+             <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
+
+     					<ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+             <a class="btn btn-simple" href="{% url 'posts:create' %}" class="btn btn-simple btn-large">AllPost</a>
+             <a class="btn btn-simple" href="{% url 'groups:all' %}" class="btn btn-simple btn-large">Groups</a>
+             <a class="btn btn-simple" href="{% url 'groups:create' %}" class="btn btn-simple btn-large">Create Group</a>
+             <a class="btn btn-simple" href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a>
+           {% else %}
+             <a class="btn btn-simple" href="{% url 'groups:all' %}"class="btn btn-simple btn-large btn-large">AllGroups</a>
+             <a class="btn btn-simple" href="{% url 'accounts:login' %}" class="btn btn-simple btn-large">Log in</a>
+             <a class="btn btn-simple" href="{% url 'accounts:signup' %}" class="btn btn-simple btn-large">Sign up</a>
+           {% endif %}
+     					</ul>
+
+
+
+     			</div>
+     		</nav>
+         <div class="container mycontent">
+           {% block content %}
+
+           {% endblock %}
+
+         </div>
+
+  </body>
+ <!-- <script src="{% static 'simplesocial/js/myjs.js' %}" type="text/javascript" ></script> -->
+</html>

@@ -1,0 +1,35 @@
+https://www.stanleyulili.com/django/how-to-install-django-on-windows/#step-1---open-powershell
+link to commannds pip django install and virtual env
+
+venv\Scripts\activate
+deactivate
+
+
+django-admin will ive all command under it
+
+
+replace to use mysql in setting.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',
+        'USER': 'root',
+        'PASSWORD': 'Alohomora@20',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+
+
+
+
+name change of venv
+
+Activate your virtualenv: source vnev/bin/activate
+Create a requirements.txt of currently installed packages: pip freeze > requirements.txt
+Delete the misspelled virtualenv: rm -r vnev/
+Create a new virtualenv with correct name: virtualenv venv
+Activate new virtualenv: source venv/bin/activate
+Install packages from requirements.txt: pip install -r requirements.txt

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.html" %}
+{%load my_extras %}
+{% block body_block %}
+    <h1>welcome to INDEX</h1>
+    <h2>this is index.html example is temlplate inheritance </h2>
+    {{ text|cut:'hell'}}
+    {{ number|add:'50' }}
+{% endblock %}

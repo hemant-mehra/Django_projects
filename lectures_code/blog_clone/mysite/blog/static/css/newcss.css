@@ -1,0 +1,44 @@
+/* refrenced https://codepen.io/ */
+/* olny supports on chrome */
+.article {
+  color: linear-gradient(
+    to right,
+    hsl(98 100% 62%),
+    hsl(204 100% 59%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.postdate{
+  text-align: right;
+}
+
+.posttitle{
+  font-family: 'Russo One', sans-serif;
+  font-size: 3em;
+}
+
+
+.postcontent{
+  font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+}
+
+.techfonts{
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+
+}
+
+.bigbrand{
+  font-size: 3em;
+  color: red;
+}
+
+.centerstage{
+  margin-left: auto;
+  margin-right: auto;
+}

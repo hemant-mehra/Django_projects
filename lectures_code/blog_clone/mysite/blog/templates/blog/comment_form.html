@@ -1,0 +1,21 @@
+<!-- for Comment  create and update view form-->
+<!--file name is default -->
+{% extends 'blog/base.html'%}
+{%block content %}
+<h1>New Commment</h1>
+<form class="post-form" method="POST">
+  {%csrf_token%}
+  {{form.as_p}}
+  <button type="submit" class='save btn btn-default' >Post comment</button>
+
+
+</form>
+
+<!-- scrit for meduim editor -->
+<!-- code from git hub same source -->
+<script>
+        var editor = new MediumEditor('.editable');
+    </script>
+
+
+{%endblock%}

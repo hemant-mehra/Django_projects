@@ -1,0 +1,14 @@
+<!-- for delete view -->
+<!--file name is default -->
+{% extends 'blog/base.html'%}
+{%block content %}
+<form  method="POST">
+
+  {%csrf_token%}
+  <p>Are you sure want to delete{{object}}</p>
+  <input type="submit" class='btn btn-danger' value="confirm" >
+  <a class="btn btn-default" href="{%url 'post_detail' pk=post.pk %}">Cancle</a>
+
+</form>
+
+{%endblock%}
